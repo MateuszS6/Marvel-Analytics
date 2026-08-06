@@ -1,0 +1,30 @@
+services:
+    mysql:
+        image: mysql:8.4
+        container_name: marvel_mysql
+        restart: unless-stopped
+
+        environment:
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+            MYSQL_DATABASE: marvel_analytics
+            MYSQL_USER: marvel_user
+            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+
+        ports:
+            - "3306:3306"
+
+        volumes:
+            - mysql_data:/var/lib/mysql
+
+            - ./database/schema.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
+            - ./database/seeds/01_studios.sql:/docker-entrypoint-initdb.d/02_studios.sql:ro
+            - ./database/seeds/02_universes.sql:/docker-entrypoint-initdb.d/03_universes.sql:ro
+            - ./database/seeds/03_projects.sql:/docker-entrypoint-initdb.d/04_projects.sql:ro
+            - ./database/seeds/04_characters.sql:/docker-entrypoint-initdb.d/05_characters.sql:ro
+            - ./database/seeds/05_appearances.sql:/docker-entrypoint-initdb.d/06_appearances.sql:ro
+            - ./database/seeds/06_crew.sql:/docker-entrypoint-initdb.d/07_crew.sql:ro
+            - ./database/post_seed_updates.sql:/docker-entrypoint-initdb.d/08_post_seed_updates.sql:ro
+            - ./database/views.sql:/docker-entrypoint-initdb.d/09_views.sql:ro
+
+volumes:
+    mysql_data:
