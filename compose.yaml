@@ -13,8 +13,12 @@ services:
         ports:
             - "3306:3306"
 
+        # Store DB in memory for now
+        tmpfs:
+            - /var/lib/mysql
+
         volumes:
-            - mysql_data:/var/lib/mysql
+        #     - mysql_data:/var/lib/mysql
 
             - ./database/schema.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
             - ./database/seeds/01_studios.sql:/docker-entrypoint-initdb.d/02_studios.sql:ro
@@ -26,5 +30,15 @@ services:
             - ./database/post_seed_updates.sql:/docker-entrypoint-initdb.d/08_post_seed_updates.sql:ro
             - ./database/views.sql:/docker-entrypoint-initdb.d/09_views.sql:ro
 
-volumes:
-    mysql_data:
+    phpmyadmin:
+        image: phpmyadmin
+        container_name: marvel_phpmyadmin
+        ports:
+            - "8080:80"
+        environment:
+            PMA_HOST: mysql
+        depends_on:
+            - mysql
+
+# volumes:
+#     mysql_data:

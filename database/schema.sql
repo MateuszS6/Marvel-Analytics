@@ -19,122 +19,137 @@ DROP TABLE IF EXISTS SSU;
 
 -- CREATE TABLES
 
-CREATE TABLE Studio(
-    Name varchar(50) PRIMARY KEY,
-    DateFounded date,
-    President varchar(50)
+CREATE TABLE Studio (
+    Name VARCHAR(50) PRIMARY KEY,
+    DateFounded DATE NULL,
+    President VARCHAR(50)
 );
 
-CREATE TABLE Universe(
-    Earth varchar(6) PRIMARY KEY,
-    EditorialName varchar(50) UNIQUE,
-    StudioName varchar(50),
-    FOREIGN KEY (StudioName) REFERENCES Studio(Name)
-        ON DELETE CASCADE
+CREATE TABLE Universe (
+    Earth VARCHAR(6) PRIMARY KEY,
+    EditorialName VARCHAR(50) UNIQUE,
+    StudioName VARCHAR(50),
+    FOREIGN KEY (StudioName) REFERENCES Studio (Name) ON DELETE CASCADE
 );
 
-CREATE TABLE Project(
-	ID int AUTO_INCREMENT,
-	TimelineOrder int,
-	Title varchar(100) UNIQUE,
-	ReleaseDate date,
-    Released tinyint(1) NOT NULL DEFAULT 0,
-    Type varchar(20),
-    BoxOffice dec(12),
-	`Phase` int,
-	Saga varchar(20),
-    UniverseEarth varchar(6) DEFAULT '199999',
-    StudioName varchar(50) DEFAULT 'Marvel Studios',
+CREATE TABLE Project (
+    ID INT AUTO_INCREMENT,
+    TimelineOrder INT,
+    Title VARCHAR(100) UNIQUE,
+    ReleaseDate DATE,
+    Released TINYINT(1) NOT NULL DEFAULT 0,
+    Type VARCHAR(20),
+    BoxOffice DEC(12),
+    `Phase` INT,
+    Saga VARCHAR(20),
+    UniverseEarth VARCHAR(6) DEFAULT '199999',
+    StudioName VARCHAR(50) DEFAULT 'Marvel Studios',
     PRIMARY KEY (ID, TimelineOrder, Title),
-    FOREIGN KEY (UniverseEarth) REFERENCES Universe(Earth)
-        ON DELETE CASCADE,
-    FOREIGN KEY (StudioName) REFERENCES Studio(Name)
-        ON DELETE CASCADE
+    FOREIGN KEY (UniverseEarth) REFERENCES Universe (Earth) ON DELETE CASCADE,
+    FOREIGN KEY (StudioName) REFERENCES Studio (Name) ON DELETE CASCADE
 );
+
 /*
-CREATE TABLE MCU(
-    ProjectID int,
-    ProjectTimelineOrder int,
-    ProjectTitle varchar(100),
-    `Phase` int,
-	Saga varchar(20),
+CREATE TABLE MCU (
+    ProjectID INT,
+    ProjectTimelineOrder INT,
+    ProjectTitle VARCHAR(100),
+    `Phase` INT,
+    Saga VARCHAR(20),
     FOREIGN KEY (ProjectID, ProjectTimelineOrder, ProjectTitle) REFERENCES Project(ID, TimelineOrder, Title)
-        ON DELETE CASCADE
+    ON DELETE CASCADE
 );
 
-CREATE TABLE Film(
-    ID int PRIMARY KEY AUTO_INCREMENT,
-    ProjectID int,
-    ProjectTimelineOrder int,
-    ProjectTitle varchar(100),
-    RunningTime int,
-    BoxOffice dec(12),
+CREATE TABLE Film (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    ProjectID INT,
+    ProjectTimelineOrder INT,
+    ProjectTitle VARCHAR(100),
+    RunningTime INT,
+    BoxOffice DEC(12),
     FOREIGN KEY (ProjectID, ProjectTimelineOrder, ProjectTitle) REFERENCES Project(ID, TimelineOrder, Title)
-        ON DELETE CASCADE
+    ON DELETE CASCADE
 );
 
-CREATE TABLE Series(
-    ID int PRIMARY KEY AUTO_INCREMENT,
-    ProjectID int,
-    ProjectTimelineOrder int,
-    ProjectTitle varchar(100),
-    Episodes int,
+CREATE TABLE Series (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    ProjectID INT,
+    ProjectTimelineOrder INT,
+    ProjectTitle VARCHAR(100),
+    Episodes INT,
     FOREIGN KEY (ProjectID, ProjectTimelineOrder, ProjectTitle) REFERENCES Project(ID, TimelineOrder, Title)
-        ON DELETE CASCADE
+    ON DELETE CASCADE
 );
 
-CREATE TABLE Special(
-    ID int PRIMARY KEY AUTO_INCREMENT,
-    ProjectID int,
-    ProjectTimelineOrder int,
-    ProjectTitle varchar(100),
-    RunningTime int,
+CREATE TABLE Special (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    ProjectID INT,
+    ProjectTimelineOrder INT,
+    ProjectTitle VARCHAR(100),
+    RunningTime INT,
     FOREIGN KEY (ProjectID, ProjectTimelineOrder, ProjectTitle) REFERENCES Project(ID, TimelineOrder, Title)
-        ON DELETE CASCADE
+    ON DELETE CASCADE
 );
 */
-CREATE TABLE `Character`(
-	LatestAlias varchar(50) PRIMARY KEY,
-	FirstName varchar(20),
-	LastName varchar(20),
-	`Status` varchar(10),
-    OriginUniverse varchar(6) DEFAULT '199999',
-    OwningStudio varchar(50) DEFAULT 'Marvel Studios',
-    FOREIGN KEY (OriginUniverse) REFERENCES Universe(Earth)
-        ON DELETE CASCADE,
-    FOREIGN KEY (OwningStudio) REFERENCES Studio(Name)
-        ON DELETE CASCADE
+
+CREATE TABLE `Character` (
+    LatestAlias VARCHAR(50) PRIMARY KEY,
+    FirstName VARCHAR(20),
+    LastName VARCHAR(20),
+    `Status` VARCHAR(10),
+    OriginUniverse VARCHAR(6) DEFAULT '199999',
+    OwningStudio VARCHAR(50) DEFAULT 'Marvel Studios',
+    FOREIGN KEY (OriginUniverse) REFERENCES Universe (Earth) ON DELETE CASCADE,
+    FOREIGN KEY (OwningStudio) REFERENCES Studio (Name) ON DELETE CASCADE
 );
 
-CREATE TABLE ProjectCharacter(
-    AppearanceType varchar(50),
-    CharacterAlias varchar(50),
-    ProjectID int,
-    ProjectTimelineOrder int,
-    ProjectTitle varchar(100),
-    PRIMARY KEY (CharacterAlias, ProjectID, ProjectTimelineOrder, ProjectTitle),
-    FOREIGN KEY (CharacterAlias) REFERENCES `Character`(LatestAlias)
-        ON DELETE CASCADE,
-    FOREIGN KEY (ProjectID, ProjectTimelineOrder, ProjectTitle) REFERENCES Project(ID, TimelineOrder, Title)
-        ON DELETE CASCADE
+CREATE TABLE ProjectCharacter (
+    AppearanceType VARCHAR(50),
+    CharacterAlias VARCHAR(50),
+    ProjectID INT,
+    ProjectTimelineOrder INT,
+    ProjectTitle VARCHAR(100),
+    PRIMARY KEY (
+        CharacterAlias,
+        ProjectID,
+        ProjectTimelineOrder,
+        ProjectTitle
+    ),
+    FOREIGN KEY (CharacterAlias) REFERENCES `Character` (LatestAlias) ON DELETE CASCADE,
+    FOREIGN KEY (
+        ProjectID,
+        ProjectTimelineOrder,
+        ProjectTitle
+    ) REFERENCES Project (ID, TimelineOrder, Title) ON DELETE CASCADE
 );
 
-CREATE TABLE CrewMember(
-    FirstName varchar(20),
-    LastName varchar(20),
-    Role varchar(20) NOT NULL,
+CREATE TABLE CrewMember (
+    FirstName VARCHAR(20),
+    LastName VARCHAR(20),
+    Role VARCHAR(20) NOT NULL,
     PRIMARY KEY (FirstName, LastName)
 );
 
-CREATE TABLE ProjectCrewMember(
-    CrewMemberFirstName varchar(20),
-    CrewMemberLastName varchar(20),
-    ProjectID int,
-    ProjectTimelineOrder int,
-    ProjectTitle varchar(100),
-    PRIMARY KEY (CrewMemberFirstName, CrewMemberLastName, ProjectID, ProjectTimelineOrder, ProjectTitle),
-    CONSTRAINT CrewMemberName FOREIGN KEY (CrewMemberFirstName, CrewMemberLastName) REFERENCES CrewMember(FirstName, LastName)
-        ON DELETE CASCADE,
-    FOREIGN KEY (ProjectID, ProjectTimelineOrder, ProjectTitle) REFERENCES Project(ID, TimelineOrder, Title)
-        ON DELETE CASCADE
+CREATE TABLE ProjectCrewMember (
+    CrewMemberFirstName VARCHAR(20),
+    CrewMemberLastName VARCHAR(20),
+    ProjectID INT,
+    ProjectTimelineOrder INT,
+    ProjectTitle VARCHAR(100),
+    PRIMARY KEY (
+        CrewMemberFirstName,
+        CrewMemberLastName,
+        ProjectID,
+        ProjectTimelineOrder,
+        ProjectTitle
+    ),
+    CONSTRAINT CrewMemberName FOREIGN KEY (
+        CrewMemberFirstName,
+        CrewMemberLastName
+    ) REFERENCES CrewMember (FirstName, LastName) ON DELETE CASCADE,
+    FOREIGN KEY (
+        ProjectID,
+        ProjectTimelineOrder,
+        ProjectTitle
+    ) REFERENCES Project (ID, TimelineOrder, Title) ON DELETE CASCADE
 );
