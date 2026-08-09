@@ -3,13 +3,9 @@ SET Released = TRUE
 WHERE ReleaseDate <= CURRENT_DATE();
 
 UPDATE Project
-SET Released = 2
-WHERE ID IN (22, 23, 32);
-
-UPDATE Project
 SET Type = CASE
     WHEN BoxOffice IS NOT NULL THEN 'Film'
-    WHEN BoxOffice IS NULL THEN 'Original Series'
+    WHEN BoxOffice IS NULL THEN 'TV'
 END;
 
 UPDATE Project

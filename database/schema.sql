@@ -37,7 +37,7 @@ CREATE TABLE Project (
     TimelineOrder INT,
     Title VARCHAR(100) UNIQUE,
     ReleaseDate DATE,
-    Released TINYINT(1) NOT NULL DEFAULT 0,
+    Released BOOLEAN DEFAULT FALSE,
     Type VARCHAR(20),
     BoxOffice DEC(12),
     `Phase` INT,

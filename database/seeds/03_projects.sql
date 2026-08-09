@@ -51,13 +51,12 @@ INSERT INTO Project(TimelineOrder, Title, ReleaseDate, BoxOffice) VALUES
     (48, 'Ironheart', 20230624, NULL),
     (49, 'Agatha All Along', 20240918, NULL),
     (50, 'Daredevil: Born Again', 20250304, NULL),
-    (51, 'Captain America: New World Order', 20240503, 0),
-    (52, 'Thunderbolts', 20240726, 0),
-    (53, 'Blade', 20240906, 0),
-    (54, 'Deadpool 3', 20241108, 0),
-    (55, 'Fantastic Four', 20250214, 0),
-    (56, 'Avengers: The Kang Dynasty', 20250502, 0),
-    (57, 'Avengers: Secret Wars', 20260501, 0);
+    (51, 'Captain America: Brave New World', 20240503, 0),
+    (52, 'Thunderbolts*', 20240726, 0),
+    (54, 'Deadpool & Wolverine', 20241108, 0),
+    (55, 'The Fantastic Four: First Steps', 20250214, 0),
+    (56, 'Avengers: Doomsday', 20261218, 0),
+    (57, 'Avengers: Secret Wars', 20271218, 0);
 
 INSERT INTO Project(ID, TimelineOrder, Title, ReleaseDate, BoxOffice, UniverseEarth, StudioName) VALUES
     (1, 1, 'Spider-Man', 20020503, 825025036, '96283', 'Sony Pictures'),
