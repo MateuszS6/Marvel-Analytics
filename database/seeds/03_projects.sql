@@ -1,6 +1,6 @@
-ALTER TABLE Project AUTO_INCREMENT = 1;
+ALTER TABLE projects AUTO_INCREMENT = 1;
 
-INSERT INTO Project(TimelineOrder, Title, ReleaseDate, BoxOffice) VALUES
+INSERT INTO projects(timeline_order, title, released, box_office) VALUES
     (3, 'Iron Man', 20080430, 585796247),
     (5, 'The Incredible Hulk', 20080613, 264770996),
     (4, 'Iron Man 2', 20100428, 623933331),
@@ -58,7 +58,7 @@ INSERT INTO Project(TimelineOrder, Title, ReleaseDate, BoxOffice) VALUES
     (56, 'Avengers: Doomsday', 20261218, 0),
     (57, 'Avengers: Secret Wars', 20271218, 0);
 
-INSERT INTO Project(ID, TimelineOrder, Title, ReleaseDate, BoxOffice, UniverseEarth, StudioName) VALUES
+INSERT INTO projects(id, timeline_order, title, released, box_office, universe_id, studio_name) VALUES
     (1, 1, 'Spider-Man', 20020503, 825025036, '96283', 'Sony Pictures'),
     (2, 2, 'Spider-Man 2', 20040630, 788976453, '96283', 'Sony Pictures'),
     (3, 3, 'Spider-Man 3', 20070504, 894983373, '96283', 'Sony Pictures'),

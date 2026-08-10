@@ -1,4 +1,4 @@
-INSERT INTO Studio VALUES
+INSERT INTO studios VALUES
     ('Universal Studios', 19120430, 'Peter Cramer'),
     ('20th Century Fox', 19350531, 'Steve Asbell'),
     ('Marvel Comics', NULL, NULL),

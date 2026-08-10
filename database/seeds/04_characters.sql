@@ -1,4 +1,4 @@
-INSERT INTO `Character`(LatestAlias, FirstName, LastName, `Status`) VALUES
+INSERT INTO characters(alias, first_name, last_name, life_status) VALUES
     ('Iron Man', 'Anthony', 'Stark', 'Deceased'),
     ('War Machine', 'James', 'Rhodes', 'Alive'),
     ('Pepper Potts', 'Virginia', 'Potts', 'Alive'),
@@ -78,7 +78,7 @@ INSERT INTO `Character`(LatestAlias, FirstName, LastName, `Status`) VALUES
     ('Mister Gryphon', 'Nathaniel', 'Richards', 'Alive'),
     ('Victor Timely', 'Nathaniel', 'Richards', 'Alive');
 
-INSERT INTO `Character` VALUES
+INSERT INTO characters VALUES
     ('Friendly Neighborhood Spider-Man', 'Peter', 'Parker', 'Alive', '96283', 'Sony Pictures'),
     ('Green Goblin', 'Norman', 'Osborne', 'Alive', '96283', 'Sony Pictures'),
     ('The Amazing Spider-Man', 'Peter', 'Parker', 'Alive', '120703', 'Sony Pictures'),

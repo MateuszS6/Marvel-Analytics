@@ -1,4 +1,4 @@
-INSERT INTO Universe VALUES
+INSERT INTO universes VALUES
     ('616', 'Prime Marvel Universe', 'Marvel Comics'),
     ('838', NULL, 'Marvel Studios'),
     ('1610', 'Ultimate Marvel Universe', 'Marvel Comics'),
