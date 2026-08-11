@@ -27,8 +27,7 @@ services:
             - ./database/seeds/04_characters.sql:/docker-entrypoint-initdb.d/05_characters.sql:ro
             - ./database/seeds/05_appearances.sql:/docker-entrypoint-initdb.d/06_appearances.sql:ro
             - ./database/seeds/06_crew.sql:/docker-entrypoint-initdb.d/07_crew.sql:ro
-            - ./database/post_seed_updates.sql:/docker-entrypoint-initdb.d/08_post_seed_updates.sql:ro
-            - ./database/views.sql:/docker-entrypoint-initdb.d/09_views.sql:ro
+            - ./database/views.sql:/docker-entrypoint-initdb.d/08_views.sql:ro
 
     phpmyadmin:
         image: phpmyadmin

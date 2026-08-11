@@ -64,7 +64,7 @@ CREATE TABLE characters (
     life_status VARCHAR(10),
 
     origin_universe_id VARCHAR(6),
-    parent_studio INT,
+    parent_studio_id INT,
 
     FOREIGN KEY (origin_universe_id)
         REFERENCES universes(earth)

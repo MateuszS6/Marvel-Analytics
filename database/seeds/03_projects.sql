@@ -1,76 +1,500 @@
-ALTER TABLE projects AUTO_INCREMENT = 1;
+INSERT INTO
+    projects (
+        title,
+        released,
+        timeline_order,
+        box_office
+    )
+VALUES (
+        'Iron Man',
+        '2008-04-30',
+        3,
+        585796247
+    ),
+    (
+        'The Incredible Hulk',
+        '2008-06-13',
+        5,
+        264770996
+    ),
+    (
+        'Iron Man 2',
+        '2010-04-28',
+        4,
+        623933331
+    ),
+    (
+        'Thor',
+        '2011-04-27',
+        6,
+        449326618
+    ),
+    (
+        'Captain America: The First Avenger',
+        '2011-07-29',
+        1,
+        370569774
+    ),
+    (
+        'The Avengers',
+        '2012-04-25',
+        7,
+        1518815515
+    ),
+    (
+        'Iron Man 3',
+        '2013-04-24',
+        9,
+        1214811252
+    ),
+    (
+        'Thor: The Dark World',
+        '2013-10-30',
+        8,
+        644783140
+    ),
+    (
+        'Captain America: The Winter Soldier',
+        '2014-03-26',
+        10,
+        714421503
+    ),
+    (
+        'Guardians of the Galaxy',
+        '2014-07-31',
+        11,
+        773350147
+    ),
+    (
+        'Avengers: Age of Ultron',
+        '2015-04-22',
+        14,
+        1402805868
+    ),
+    (
+        'Ant-Man',
+        '2015-07-14',
+        15,
+        519311965
+    ),
+    (
+        'Captain America: Civil War',
+        '2016-04-27',
+        16,
+        1153296293
+    ),
+    (
+        'Doctor Strange',
+        '2016-10-25',
+        20,
+        677718395
+    ),
+    (
+        'Guardians of the Galaxy Vol. 2',
+        '2017-04-25',
+        12,
+        863756051
+    ),
+    (
+        'Spider-Man: Homecoming',
+        '2017-07-05',
+        19,
+        880166924
+    ),
+    (
+        'Thor: Ragnarok',
+        '2017-10-24',
+        21,
+        853977126
+    ),
+    (
+        'Black Panther',
+        '2018-02-13',
+        18,
+        1347280161
+    ),
+    (
+        'Avengers: Infinity War',
+        '2018-04-27',
+        23,
+        2048359754
+    ),
+    (
+        'Ant-Man and the Wasp',
+        '2018-07-04',
+        22,
+        622674139
+    ),
+    (
+        'Captain Marvel',
+        '2019-03-08',
+        2,
+        1128275263
+    ),
+    (
+        'Avengers: Endgame',
+        '2019-04-26',
+        24,
+        2797800564
+    ),
+    (
+        'Spider-Man: Far From Home',
+        '2019-07-02',
+        29,
+        1131927996
+    ),
+    (
+        'WandaVision',
+        '2021-01-15',
+        27,
+        NULL
+    ),
+    (
+        'The Falcon and the Winter Soldier',
+        '2021-03-19',
+        28,
+        NULL
+    ),
+    (
+        'Loki (Season 1)',
+        '2021-06-09',
+        25,
+        NULL
+    ),
+    (
+        'Black Widow',
+        '2021-07-09',
+        17,
+        379751655
+    ),
+    (
+        'What If...? (Season 1)',
+        '2021-08-11',
+        26,
+        NULL
+    ),
+    (
+        'Shang-Chi and the Legend of the Ten Rings',
+        '2021-09-03',
+        30,
+        432243292
+    ),
+    (
+        'Eternals',
+        '2021-11-05',
+        31,
+        402064899
+    ),
+    (
+        'Hawkeye',
+        '2021-11-24',
+        34,
+        NULL
+    ),
+    (
+        'Spider-Man: No Way Home',
+        '2021-12-15',
+        32,
+        1916306995
+    ),
+    (
+        'Moon Knight',
+        '2022-03-30',
+        35,
+        NULL
+    ),
+    (
+        'Doctor Strange in the Multiverse of Madness',
+        '2022-05-06',
+        33,
+        955775804
+    ),
+    (
+        'Ms. Marvel',
+        '2022-06-08',
+        38,
+        NULL
+    ),
+    (
+        'Thor: Love and Thunder',
+        '2022-07-08',
+        39,
+        760928081
+    ),
+    (
+        'I Am Groot',
+        '2022-08-10',
+        13,
+        NULL
+    ),
+    (
+        'She-Hulk: Attorney at Law',
+        '2022-08-18',
+        37,
+        NULL
+    ),
+    (
+        'Werewolf by Night',
+        '2022-10-07',
+        40,
+        NULL
+    ),
+    (
+        'Black Panther: Wakanda Forever',
+        '2022-11-11',
+        36,
+        855070308
+    ),
+    (
+        'The Guardians of the Galaxy Holiday Special',
+        '2022-11-25',
+        41,
+        NULL
+    ),
+    (
+        'Ant-Man and the Wasp: Quantumania',
+        '2023-02-17',
+        42,
+        0
+    ),
+    (
+        'Secret Invasion',
+        '2023-06-21',
+        43,
+        NULL
+    ),
+    (
+        'Guardians of the Galaxy Vol. 3',
+        '2023-05-05',
+        44,
+        0
+    ),
+    (
+        'Echo',
+        '2023-01-09',
+        45,
+        NULL
+    ),
+    (
+        'Loki (Season 2)',
+        '2023-10-05',
+        46,
+        NULL
+    ),
+    (
+        'The Marvels',
+        '2023-07-28',
+        47,
+        0
+    ),
+    (
+        'Ironheart',
+        '2023-06-24',
+        48,
+        NULL
+    ),
+    (
+        'Agatha All Along',
+        '2024-09-18',
+        49,
+        NULL
+    ),
+    (
+        'Daredevil: Born Again',
+        '2025-03-04',
+        50,
+        NULL
+    ),
+    (
+        'Captain America: Brave New World',
+        '2024-05-03',
+        51,
+        0
+    ),
+    (
+        'Thunderbolts*',
+        '2024-07-26',
+        52,
+        0
+    ),
+    (
+        'Deadpool & Wolverine',
+        '2024-11-08',
+        54,
+        0
+    ),
+    (
+        'The Fantastic Four: First Steps',
+        '2025-02-14',
+        55,
+        0
+    ),
+    (
+        'Avengers: Doomsday',
+        '2026-12-18',
+        56,
+        0
+    ),
+    (
+        'Avengers: Secret Wars',
+        '2027-12-18',
+        57,
+        0
+    );
 
-INSERT INTO projects(timeline_order, title, released, box_office) VALUES
-    (3, 'Iron Man', 20080430, 585796247),
-    (5, 'The Incredible Hulk', 20080613, 264770996),
-    (4, 'Iron Man 2', 20100428, 623933331),
-    (6, 'Thor', 20110427, 449326618),
-    (1, 'Captain America: The First Avenger', 20110729, 370569774),
-    (7, 'The Avengers', 20120425, 1518815515),
-    (9, 'Iron Man 3', 20130424, 1214811252),
-    (8, 'Thor: The Dark World', 20131030, 644783140),
-    (10, 'Captain America: The Winter Soldier', 20140326, 714421503),
-    (11, 'Guardians of the Galaxy', 20140731, 773350147),
-    (14, 'Avengers: Age of Ultron', 20150422, 1402805868),
-    (15, 'Ant-Man', 20150714, 519311965),
-    (16, 'Captain America: Civil War', 20160427, 1153296293),
-    (20, 'Doctor Strange', 20161025, 677718395),
-    (12, 'Guardians of the Galaxy Vol. 2', 20170425, 863756051),
-    (19, 'Spider-Man: Homecoming', 20170705, 880166924),
-    (21, 'Thor: Ragnarok', 20171024, 853977126),
-    (18, 'Black Panther', 20180213, 1347280161),
-    (23, 'Avengers: Infinity War', 20180427, 2048359754),
-    (22, 'Ant-Man and the Wasp', 20180704, 622674139),
-    (2, 'Captain Marvel', 20190308, 1128275263),
-    (24, 'Avengers: Endgame', 20190426, 2797800564),
-    (29, 'Spider-Man: Far From Home', 20190702, 1131927996),
-    (27, 'WandaVision', 20210115, NULL),
-    (28, 'The Falcon and the Winter Soldier', 20210319, NULL),
-    (25, 'Loki (Season 1)', 20210609, NULL),
-    (17, 'Black Widow', 20210709, 379751655),
-    (26, 'What If...? (Season 1)', 20210811, NULL),
-    (30, 'Shang-Chi and the Legend of the Ten Rings', 20210903, 432243292),
-    (31, 'Eternals', 20211105, 402064899),
-    (34, 'Hawkeye', 20211124, NULL),
-    (32, 'Spider-Man: No Way Home', 20211215, 1916306995),
-    (35, 'Moon Knight', 20220330, NULL),
-    (33, 'Doctor Strange in the Multiverse of Madness', 20220506, 955775804),
-    (38, 'Ms. Marvel', 20220608, NULL),
-    (39, 'Thor: Love and Thunder', 20220708, 760928081),
-    (13, 'I Am Groot', 20220810, NULL),
-    (37, 'She-Hulk: Attorney at Law', 20220818, NULL),
-    (40, 'Werewolf by Night', 20221007, NULL),
-    (36, 'Black Panther: Wakanda Forever', 20221111, 855070308),
-    (41, 'The Guardians of the Galaxy Holiday Special', 20221125, NULL),
-    (42, 'Ant-Man and the Wasp: Quantumania', 20230217, 0),
-    (43, 'Secret Invasion', 20230621, NULL),
-    (44, 'Guardians of the Galaxy Vol. 3', 20230505, 0),
-    (45, 'Echo', 20230109, NULL),
-    (46, 'Loki (Season 2)', 20231005, NULL),
-    (47, 'The Marvels', 20230728, 0),
-    (48, 'Ironheart', 20230624, NULL),
-    (49, 'Agatha All Along', 20240918, NULL),
-    (50, 'Daredevil: Born Again', 20250304, NULL),
-    (51, 'Captain America: Brave New World', 20240503, 0),
-    (52, 'Thunderbolts*', 20240726, 0),
-    (54, 'Deadpool & Wolverine', 20241108, 0),
-    (55, 'The Fantastic Four: First Steps', 20250214, 0),
-    (56, 'Avengers: Doomsday', 20261218, 0),
-    (57, 'Avengers: Secret Wars', 20271218, 0);
+INSERT INTO
+    projects (
+        title,
+        released,
+        timeline_order,
+        box_office,
+        universe_id
+    )
+VALUES (
+        'Spider-Man',
+        '2002-05-03',
+        1,
+        825025036,
+        '96283'
+    ),
+    (
+        'Spider-Man 2',
+        '2004-06-30',
+        2,
+        788976453,
+        '96283'
+    ),
+    (
+        'Spider-Man 3',
+        '2007-05-04',
+        3,
+        894983373,
+        '96283'
+    ),
+    (
+        'The Amazing Spider-Man',
+        '2012-07-03',
+        1,
+        757930663,
+        '120703'
+    ),
+    (
+        'The Amazing Spider-Man 2',
+        '2014-04-16',
+        2,
+        708982323,
+        '120703'
+    ),
+    (
+        'X-Men: First Class',
+        '2011-06-01',
+        1,
+        352616690,
+        'TRN414'
+    ),
+    (
+        'X-Men: Days of Future Past',
+        '2014-05-20',
+        2,
+        746045700,
+        'TRN414'
+    ),
+    (
+        'Deadpool',
+        '2016-02-08',
+        5,
+        782836791,
+        'TRN414'
+    ),
+    (
+        'X-Men: Apocalypse',
+        '2016-05-18',
+        3,
+        543934105,
+        'TRN414'
+    ),
+    (
+        'Logan',
+        '2017-03-03',
+        7,
+        619179950,
+        'TRN414'
+    ),
+    (
+        'Deadpool 2',
+        '2018-05-15',
+        6,
+        785896609,
+        'TRN414'
+    ),
+    (
+        'Dark Phoenix',
+        '2019-06-05',
+        4,
+        252442974,
+        'TRN414'
+    ),
+    (
+        'Venom',
+        '2018-10-05',
+        1,
+        856085151,
+        'TRN688'
+    ),
+    (
+        'Venom: Let There Be Carnage',
+        '2021-09-30',
+        2,
+        506863592,
+        'TRN688'
+    ),
+    (
+        'Morbius',
+        '2022-03-30',
+        3,
+        167460961,
+        'TRN688'
+    );
 
-INSERT INTO projects(id, timeline_order, title, released, box_office, universe_id, studio_name) VALUES
-    (1, 1, 'Spider-Man', 20020503, 825025036, '96283', 'Sony Pictures'),
-    (2, 2, 'Spider-Man 2', 20040630, 788976453, '96283', 'Sony Pictures'),
-    (3, 3, 'Spider-Man 3', 20070504, 894983373, '96283', 'Sony Pictures'),
-    (1, 1, 'The Amazing Spider-Man', 20120703, 757930663, '120703', 'Sony Pictures'),
-    (2, 2, 'The Amazing Spider-Man 2', 20140416, 708982323, '120703', 'Sony Pictures'),
-    (1, 1, 'X-Men: First Class', 20110601, 352616690, 'TRN414', '20th Century Fox'),
-    (2, 2, 'X-Men: Days of Future Past', 20140520, 746045700, 'TRN414', '20th Century Fox'),
-    (3, 5, 'Deadpool', 20160208, 782836791, 'TRN414', '20th Century Fox'),
-    (4, 3, 'X-Men: Apocalypse', 20160518, 543934105, 'TRN414', '20th Century Fox'),
-    (5, 7, 'Logan', 20170303, 619179950, 'TRN414', '20th Century Fox'),
-    (6, 6, 'Deadpool 2', 20180515, 785896609, 'TRN414', '20th Century Fox'),
-    (7, 4, 'Dark Phoenix', 20190605, 252442974, 'TRN414', '20th Century Fox'),
-    (1, 1, 'Venom', 20181005, 856085151, 'TRN688', 'Sony Pictures'),
-    (2, 2, 'Venom: Let There Be Carnage', 20210930, 506863592, 'TRN688', 'Sony Pictures'),
-    (3, 3, 'Morbius', 20220330, 167460961, 'TRN688', 'Sony Pictures');
+UPDATE projects SET is_out = TRUE WHERE released <= CURRENT_DATE();
+
+UPDATE projects
+SET
+    type = CASE
+        WHEN box_office IS NOT NULL THEN 'Movie'
+        WHEN box_office IS NULL THEN 'TV Show'
+    END;
+
+UPDATE projects
+SET
+    type = 'Special Presentation'
+WHERE
+    id IN (39, 41);
+
+UPDATE projects
+SET
+    universe_id = '199999'
+WHERE
+    universe_id IS NULL;
+
+-- UPDATE projects
+-- SET
+--     mcu_phase = CASE
+--         WHEN YEAR(released) BETWEEN 2008 AND 2012  THEN 1
+--         WHEN YEAR(released) BETWEEN 2013 AND 2015  THEN 2
+--         WHEN YEAR(released) BETWEEN 2016 AND 2019  THEN 3
+--         WHEN YEAR(released) BETWEEN 2021 AND 2022  THEN 4
+--         WHEN YEAR(released) BETWEEN 2023 AND 2024  THEN 5
+--         WHEN YEAR(released) BETWEEN 2025 AND 2026  THEN 6
+--     END
+-- WHERE
+--     studio_name = 'Marvel Studios';
+
+-- UPDATE projects
+-- SET
+--     mcu_saga = CASE
+--         WHEN mcu_phase BETWEEN 1 AND 3  THEN 'Infinity'
+--         WHEN mcu_phase BETWEEN 4 AND 6  THEN 'Multiverse'
+--     END
+-- WHERE
+--     studio_name = 'Marvel Studios';
