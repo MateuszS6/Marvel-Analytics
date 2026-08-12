@@ -1,53 +1,202 @@
-INSERT INTO people VALUES
-    ('Jon', 'Favreau', 'Director'),
-    ('Ramin', 'Djawadi', 'Composer'),
-    ('Alan', 'Silvestri', 'Composer'),
-    ('Joss', 'Whedon', 'Director'),
-    ('Brian', 'Tyler', 'Composer'),
-    ('Anthony', 'Russo', 'Director'),
-    ('Joe', 'Russo', 'Director'),
-    ('Henry', 'Jackman', 'Composer'),
-    ('James', 'Gunn', 'Director'),
-    ('Danny', 'Elfman', 'Composer'),
-    ('Michael', 'Giacchino', 'Composer'),
-    ('Ludwig', 'Göransson', 'Composer');
+INSERT INTO
+    people (first_name, last_name)
+VALUES ('Jon', 'Favreau'),
+    ('Ramin', 'Djawadi'),
+    ('Alan', 'Silvestri'),
+    ('Joss', 'Whedon'),
+    ('Brian', 'Tyler'),
+    ('Anthony', 'Russo'),
+    ('Joe', 'Russo'),
+    ('Henry', 'Jackman'),
+    ('James', 'Gunn'),
+    ('Danny', 'Elfman'),
+    ('Michael', 'Giacchino'),
+    ('Ludwig', 'Göransson');
 
-# cannot convert to case due to first and last names being separate
-INSERT INTO project_credits
-    SELECT 'Jon', 'Favreau', id, timeline_order, title
-    FROM projects WHERE universe_id = '199999' AND id IN (1, 2)
-    UNION
-    SELECT 'Ramin', 'Djawadi', id, timeline_order, title
-    FROM projects WHERE universe_id = '199999' AND id IN (1, 30)
-    UNION
-    SELECT 'Alan', 'Silvestri', id, timeline_order, title
-    FROM projects WHERE universe_id = '199999' AND id IN (5, 6, 19, 22)
-    UNION
-    SELECT 'Joss', 'Whedon', id, timeline_order, title
-    FROM projects WHERE universe_id = '199999' AND id IN (6, 11)
-    UNION
-    SELECT 'Brian', 'Tyler', id, timeline_order, title
-    FROM projects WHERE universe_id = '199999' AND id IN (7, 11)
-    UNION
-    SELECT 'Anthony', 'Russo', id, timeline_order, title
-    FROM projects WHERE universe_id = '199999' AND id IN (9, 13, 19, 22)
-    UNION
-    SELECT 'Joe', 'Russo', id, timeline_order, title
-    FROM projects WHERE universe_id = '199999' AND id IN (9, 13, 19, 22)
-    UNION
-    SELECT 'Henry', 'Jackman', id, timeline_order, title
-    FROM projects WHERE universe_id = '199999' AND id IN (9, 13, 25)
-    UNION
-    SELECT 'James', 'Gunn', id, timeline_order, title
-    FROM projects WHERE universe_id = '199999' AND id IN (10, 15, 41)
-    UNION
-    SELECT 'Danny', 'Elfman', id, timeline_order, title
-    FROM projects WHERE universe_id = '96283' AND id IN (1, 2)
-    OR universe_id = '199999' AND id IN (11, 34)
-    UNION
-    SELECT 'Michael', 'Giacchino', id, timeline_order, title
-    FROM projects WHERE universe_id = '199999' AND id IN (14, 16, 23, 32, 36, 39)
-    UNION
-    SELECT 'Ludwig', 'Göransson', id, timeline_order, title
-    FROM projects WHERE universe_id = '199999' AND id IN (18, 40)
-    OR universe_id = 'TRN688' AND id = 1;
+INSERT INTO
+    project_credits (
+        person_id,
+        project_id,
+        person_role
+    )
+SELECT pe.id, pr.id, 'Director'
+FROM people pe
+    CROSS JOIN projects pr
+WHERE
+    pe.first_name = 'Jon'
+    AND pe.last_name = 'Favreau'
+    AND pr.universe_id = '199999'
+    AND pr.id IN (1, 2);
+
+INSERT INTO
+    project_credits (
+        person_id,
+        project_id,
+        person_role
+    )
+SELECT pe.id, pr.id, 'Composer'
+FROM people pe
+    CROSS JOIN projects pr
+WHERE
+    pe.first_name = 'Ramin'
+    AND pe.last_name = 'Djawadi'
+    AND pr.universe_id = '199999'
+    AND pr.id IN (1, 30);
+
+INSERT INTO
+    project_credits (
+        person_id,
+        project_id,
+        person_role
+    )
+SELECT pe.id, pr.id, 'Composer'
+FROM people pe
+    CROSS JOIN projects pr
+WHERE
+    pe.first_name = 'Alan'
+    AND pe.last_name = 'Silvestri'
+    AND pr.universe_id = '199999'
+    AND pr.id IN (5, 6, 19, 22);
+
+INSERT INTO
+    project_credits (
+        person_id,
+        project_id,
+        person_role
+    )
+SELECT pe.id, pr.id, 'Director'
+FROM people pe
+    CROSS JOIN projects pr
+WHERE
+    pe.first_name = 'Joss'
+    AND pe.last_name = 'Whedon'
+    AND pr.universe_id = '199999'
+    AND pr.id IN (6, 11);
+
+INSERT INTO
+    project_credits (
+        person_id,
+        project_id,
+        person_role
+    )
+SELECT pe.id, pr.id, 'Composer'
+FROM people pe
+    CROSS JOIN projects pr
+WHERE
+    pe.first_name = 'Brian'
+    AND pe.last_name = 'Tyler'
+    AND pr.universe_id = '199999'
+    AND pr.id IN (7, 11);
+
+INSERT INTO
+    project_credits (
+        person_id,
+        project_id,
+        person_role
+    )
+SELECT pe.id, pr.id, 'Director'
+FROM people pe
+    CROSS JOIN projects pr
+WHERE
+    pe.first_name = 'Anthony'
+    AND pe.last_name = 'Russo'
+    AND pr.universe_id = '199999'
+    AND pr.id IN (9, 13, 19, 22);
+
+INSERT INTO
+    project_credits (
+        person_id,
+        project_id,
+        person_role
+    )
+SELECT pe.id, pr.id, 'Director'
+FROM people pe
+    CROSS JOIN projects pr
+WHERE
+    pe.first_name = 'Joe'
+    AND pe.last_name = 'Russo'
+    AND pr.universe_id = '199999'
+    AND pr.id IN (9, 13, 19, 22);
+
+INSERT INTO
+    project_credits (
+        person_id,
+        project_id,
+        person_role
+    )
+SELECT pe.id, pr.id, 'Composer'
+FROM people pe
+    CROSS JOIN projects pr
+WHERE
+    pe.first_name = 'Henry'
+    AND pe.last_name = 'Jackman'
+    AND pr.universe_id = '199999'
+    AND pr.id IN (9, 13, 25);
+
+INSERT INTO
+    project_credits (
+        person_id,
+        project_id,
+        person_role
+    )
+SELECT pe.id, pr.id, 'Director'
+FROM people pe
+    CROSS JOIN projects pr
+WHERE
+    pe.first_name = 'James'
+    AND pe.last_name = 'Gunn'
+    AND pr.universe_id = '199999'
+    AND pr.id IN (10, 15, 41);
+
+INSERT INTO
+    project_credits (
+        person_id,
+        project_id,
+        person_role
+    )
+SELECT pe.id, pr.id, 'Composer'
+FROM people pe
+    CROSS JOIN projects pr
+WHERE
+    pe.first_name = 'Danny'
+    AND pe.last_name = 'Elfman'
+    AND (
+        pr.universe_id = '96283'
+        AND pr.id IN (1, 2)
+        OR pr.universe_id = '199999'
+        AND pr.id IN (11, 34)
+    );
+
+INSERT INTO
+    project_credits (
+        person_id,
+        project_id,
+        person_role
+    )
+SELECT pe.id, pr.id, 'Composer'
+FROM people pe
+    CROSS JOIN projects pr
+WHERE
+    pe.first_name = 'Michael'
+    AND pe.last_name = 'Giacchino'
+    AND pr.universe_id = '199999'
+    AND pr.id IN (14, 16, 23, 32, 36, 39);
+
+INSERT INTO
+    project_credits (
+        person_id,
+        project_id,
+        person_role
+    )
+SELECT pe.id, pr.id, 'Composer'
+FROM people pe
+    CROSS JOIN projects pr
+WHERE
+    pe.first_name = 'Ludwig'
+    AND pe.last_name = 'Göransson'
+    AND (
+        pr.universe_id = '199999'
+        AND pr.id IN (18, 40)
+        OR pr.universe_id = 'TRN688'
+        AND pr.id = 1
+    );
