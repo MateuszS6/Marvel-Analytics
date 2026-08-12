@@ -7,15 +7,15 @@ WHERE (
         CASE p.universe_id
             WHEN '96283' THEN (
                 CASE c.alias
-                    WHEN 'Watcher Informant' THEN p.id IN (1, 2, 3)
-                    WHEN 'Friendly Neighborhood Spider-Man' THEN p.id IN (1, 2, 3)
-                    WHEN 'Green Goblin' THEN p.id IN (1, 3)
+                    WHEN 'Watcher Informant' THEN p.timeline_order IN (1, 2, 3)
+                    WHEN 'Friendly Neighborhood Spider-Man' THEN p.timeline_order IN (1, 2, 3)
+                    WHEN 'Green Goblin' THEN p.timeline_order IN (1, 3)
                 END
             )
             WHEN '120703' THEN (
                 CASE c.alias
-                    WHEN 'Watcher Informant' THEN p.id IN (1, 2)
-                    WHEN 'The Amazing Spider-Man' THEN p.id IN (1, 2)
+                    WHEN 'Watcher Informant' THEN p.timeline_order IN (1, 2)
+                    WHEN 'The Amazing Spider-Man' THEN p.timeline_order IN (1, 2)
                 END
             )
             WHEN '199999' THEN (
@@ -325,7 +325,7 @@ SET
                 id = project_id
         ) = (
             CASE (
-                    SELECT character_alias
+                    SELECT alias
                     FROM characters
                     WHERE
                         id = character_id
@@ -341,7 +341,7 @@ SET
                 id = project_id
         ) = (
             CASE (
-                    SELECT character_alias
+                    SELECT alias
                     FROM characters
                     WHERE
                         id = character_id
@@ -361,7 +361,7 @@ SET
                 id = project_id
         ) = (
             CASE (
-                    SELECT character_alias
+                    SELECT alias
                     FROM characters
                     WHERE
                         id = character_id
@@ -376,7 +376,7 @@ SET
                 id = project_id
         ) = (
             CASE (
-                    SELECT character_alias
+                    SELECT alias
                     FROM characters
                     WHERE
                         id = character_id
@@ -388,7 +388,7 @@ SET
         ) THEN 'Future Scene'
         WHEN (
             CASE (
-                    SELECT character_alias
+                    SELECT alias
                     FROM characters
                     WHERE
                         id = character_id
@@ -411,7 +411,7 @@ SET
         ) THEN 'Footage'
         WHEN (
             CASE (
-                    SELECT character_alias
+                    SELECT alias
                     FROM characters
                     WHERE
                         id = character_id
@@ -427,7 +427,7 @@ SET
                 id = project_id
         ) = (
             CASE (
-                    SELECT character_alias
+                    SELECT alias
                     FROM characters
                     WHERE
                         id = character_id
@@ -446,7 +446,7 @@ SET
                 id = project_id
         ) = (
             CASE (
-                    SELECT character_alias
+                    SELECT alias
                     FROM characters
                     WHERE
                         id = character_id
@@ -462,7 +462,7 @@ SET
                 id = project_id
         ) = (
             CASE (
-                    SELECT character_alias
+                    SELECT alias
                     FROM characters
                     WHERE
                         id = character_id
@@ -480,7 +480,7 @@ SET
                 id = project_id
         ) = (
             CASE (
-                    SELECT character_alias
+                    SELECT alias
                     FROM characters
                     WHERE
                         id = character_id
@@ -495,7 +495,7 @@ SET
                 id = project_id
         ) = (
             CASE (
-                    SELECT character_alias
+                    SELECT alias
                     FROM characters
                     WHERE
                         id = character_id
@@ -512,7 +512,7 @@ SET
                 id = project_id
         ) = (
             CASE (
-                    SELECT character_alias
+                    SELECT alias
                     FROM characters
                     WHERE
                         id = character_id
@@ -522,7 +522,7 @@ SET
         ) THEN 'Illustration'
         WHEN (
             CASE (
-                    SELECT character_alias
+                    SELECT alias
                     FROM characters
                     WHERE
                         id = character_id
@@ -542,7 +542,7 @@ SET
                 id = project_id
         ) = (
             CASE (
-                    SELECT character_alias
+                    SELECT alias
                     FROM characters
                     WHERE
                         id = character_id
@@ -563,7 +563,7 @@ SET
                 id = project_id
         ) = (
             CASE (
-                    SELECT character_alias
+                    SELECT alias
                     FROM characters
                     WHERE
                         id = character_id
@@ -579,7 +579,7 @@ SET
                     id = project_id
             ) = 28
             AND (
-                SELECT character_alias
+                SELECT alias
                 FROM characters
                 WHERE
                     id = character_id
@@ -592,7 +592,7 @@ SET
                 id = project_id
         ) = (
             CASE (
-                    SELECT character_alias
+                    SELECT alias
                     FROM characters
                     WHERE
                         id = character_id

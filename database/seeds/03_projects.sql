@@ -477,24 +477,24 @@ SET
 WHERE
     universe_id IS NULL;
 
--- UPDATE projects
--- SET
---     mcu_phase = CASE
---         WHEN YEAR(released) BETWEEN 2008 AND 2012  THEN 1
---         WHEN YEAR(released) BETWEEN 2013 AND 2015  THEN 2
---         WHEN YEAR(released) BETWEEN 2016 AND 2019  THEN 3
---         WHEN YEAR(released) BETWEEN 2021 AND 2022  THEN 4
---         WHEN YEAR(released) BETWEEN 2023 AND 2024  THEN 5
---         WHEN YEAR(released) BETWEEN 2025 AND 2026  THEN 6
---     END
--- WHERE
---     studio_name = 'Marvel Studios';
-
--- UPDATE projects
--- SET
---     mcu_saga = CASE
---         WHEN mcu_phase BETWEEN 1 AND 3  THEN 'Infinity'
---         WHEN mcu_phase BETWEEN 4 AND 6  THEN 'Multiverse'
---     END
--- WHERE
---     studio_name = 'Marvel Studios';
+INSERT INTO
+    mcu_project_details (project_id, phase, saga)
+SELECT
+    id,
+    (
+        CASE
+            WHEN YEAR(released) BETWEEN 2008 AND 2012  THEN 1
+            WHEN YEAR(released) BETWEEN 2013 AND 2015  THEN 2
+            WHEN YEAR(released) BETWEEN 2016 AND 2019  THEN 3
+            WHEN YEAR(released) BETWEEN 2021 AND 2022  THEN 4
+            WHEN YEAR(released) BETWEEN 2023 AND 2024  THEN 5
+            WHEN YEAR(released) BETWEEN 2025 AND 2026  THEN 6
+        END
+    ),
+    CASE
+        WHEN YEAR(released) BETWEEN 2008 AND 2019  THEN 'Infinity'
+        WHEN YEAR(released) BETWEEN 2021 AND 2026  THEN 'Multiverse'
+    END
+FROM projects
+WHERE
+    universe_id = '199999';

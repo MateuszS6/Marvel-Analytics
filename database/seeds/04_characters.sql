@@ -487,102 +487,96 @@ INSERT INTO
         last_name,
         alias,
         life_status,
-        origin_universe_id,
-        parent_studio_id
+        origin_universe_id
     )
 VALUES (
         'Peter',
         'Parker',
         'Friendly Neighborhood Spider-Man',
         'Alive',
-        '96283',
-        'Sony Pictures'
+        '96283'
     ),
     (
         'Norman',
         'Osborne',
         'Green Goblin',
         'Alive',
-        '96283',
-        'Sony Pictures'
+        '96283'
     ),
     (
         'Peter',
         'Parker',
         'The Amazing Spider-Man',
         'Alive',
-        '120703',
-        'Sony Pictures'
+        '120703'
     ),
     (
         'Robert',
         'Banner',
         'Smart Hulk',
         'Alive',
-        '199999',
-        'Universal Studios'
+        '199999'
     ),
     (
         'Peter',
         'Parker',
         'Spider-Man',
         'Alive',
-        '199999',
-        'Sony Pictures'
+        '199999'
     ),
     (
         'James',
         'Howlett',
         'Logan',
         'Deceased',
-        'TRN414',
-        'Marvel Studios'
+        'TRN414'
     ),
     (
         'Wade',
         'Wilson',
         'Deadpool',
         'Alive',
-        'TRN414',
-        'Marvel Studios'
+        'TRN414'
     ),
     (
         'Edward',
         'Brock',
         'Eddie Brock',
         'Alive',
-        'TRN688',
-        'Sony Pictures'
+        'TRN688'
     ),
     (
         'Venom',
         NULL,
         'Lethal Protector',
         'Alive',
-        'TRN688',
-        'Sony Pictures'
+        'TRN688'
     ),
     (
         'Riot',
         NULL,
         'Riot',
         'Deceased',
-        'TRN688',
-        'Sony Pictures'
+        'TRN688'
     ),
     (
         'Carnage',
         NULL,
         'Carnage',
         'Deceased',
-        'TRN688',
-        'Sony Pictures'
+        'TRN688'
     ),
     (
         'Michael',
         'Morbius',
         'Morbius',
         'Alive',
-        'TRN688',
-        'Sony Pictures'
+        'TRN688'
     );
+
+UPDATE characters c
+JOIN universes u ON c.origin_universe_id = u.earth
+SET
+    c.parent_studio_id = u.studio_id
+WHERE
+    c.parent_studio_id IS NULL
