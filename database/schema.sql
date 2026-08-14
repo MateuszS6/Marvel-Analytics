@@ -77,8 +77,7 @@ CREATE TABLE appearances (
 
 CREATE TABLE people (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    first_name VARCHAR(50) NOT NULL,
-    last_name VARCHAR(50)
+    name VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE credits (
