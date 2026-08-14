@@ -14,7 +14,7 @@ VALUES ('Jon', 'Favreau'),
     ('Ludwig', 'Göransson');
 
 INSERT INTO
-    project_credits (
+    credits (
         person_id,
         project_id,
         person_role
@@ -29,7 +29,7 @@ WHERE
     AND pr.id IN (1, 2);
 
 INSERT INTO
-    project_credits (
+    credits (
         person_id,
         project_id,
         person_role
@@ -44,7 +44,7 @@ WHERE
     AND pr.id IN (1, 30);
 
 INSERT INTO
-    project_credits (
+    credits (
         person_id,
         project_id,
         person_role
@@ -59,7 +59,7 @@ WHERE
     AND pr.id IN (5, 6, 19, 22);
 
 INSERT INTO
-    project_credits (
+    credits (
         person_id,
         project_id,
         person_role
@@ -74,7 +74,7 @@ WHERE
     AND pr.id IN (6, 11);
 
 INSERT INTO
-    project_credits (
+    credits (
         person_id,
         project_id,
         person_role
@@ -89,7 +89,7 @@ WHERE
     AND pr.id IN (7, 11);
 
 INSERT INTO
-    project_credits (
+    credits (
         person_id,
         project_id,
         person_role
@@ -104,7 +104,7 @@ WHERE
     AND pr.id IN (9, 13, 19, 22);
 
 INSERT INTO
-    project_credits (
+    credits (
         person_id,
         project_id,
         person_role
@@ -119,7 +119,7 @@ WHERE
     AND pr.id IN (9, 13, 19, 22);
 
 INSERT INTO
-    project_credits (
+    credits (
         person_id,
         project_id,
         person_role
@@ -134,7 +134,7 @@ WHERE
     AND pr.id IN (9, 13, 25);
 
 INSERT INTO
-    project_credits (
+    credits (
         person_id,
         project_id,
         person_role
@@ -149,7 +149,7 @@ WHERE
     AND pr.id IN (10, 15, 41);
 
 INSERT INTO
-    project_credits (
+    credits (
         person_id,
         project_id,
         person_role
@@ -168,7 +168,7 @@ WHERE
     );
 
 INSERT INTO
-    project_credits (
+    credits (
         person_id,
         project_id,
         person_role
@@ -183,7 +183,7 @@ WHERE
     AND pr.id IN (14, 16, 23, 32, 36, 39);
 
 INSERT INTO
-    project_credits (
+    credits (
         person_id,
         project_id,
         person_role

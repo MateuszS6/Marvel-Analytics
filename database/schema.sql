@@ -11,7 +11,7 @@ DROP TABLE IF EXISTS mcu;
 -- DROP EXISTING VIEWS
 
 DROP TABLE IF EXISTS appearances;
-DROP TABLE IF EXISTS project_credits;
+DROP TABLE IF EXISTS credits;
 DROP TABLE IF EXISTS mcu_project_details;
 DROP TABLE IF EXISTS characters;
 DROP TABLE IF EXISTS people;
@@ -81,7 +81,7 @@ CREATE TABLE people (
     last_name VARCHAR(50)
 );
 
-CREATE TABLE project_credits (
+CREATE TABLE credits (
     person_id INT NOT NULL,
     project_id INT NOT NULL,
     person_role VARCHAR(50) NOT NULL,

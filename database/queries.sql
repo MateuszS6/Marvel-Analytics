@@ -30,7 +30,7 @@ GROUP BY project_title;
 
 -- (5) Crew members with 2+ projects.
 SELECT person_first_name, person_last_name, COUNT(*) AS num_projects
-FROM project_credits
+FROM credits
 GROUP BY person_first_name, person_last_name
 HAVING num_projects > 2
 ORDER BY num_projects, person_last_name;
@@ -63,7 +63,7 @@ ORDER BY released, id;
 
 -- (1) Release years and crew members of post-phase 1 projects that made less than $800 million.
 SELECT DISTINCT released, person_first_name, person_last_name
-FROM projects p, project_credits c
+FROM projects p, credits c
 WHERE p.title = c.project_title
 AND p.box_office < 800000000
 AND p.Phase > 1;
@@ -84,7 +84,7 @@ ORDER BY founded;
 
 -- (3) Directors and their movies.
 SELECT CONCAT_WS(' ', c.first_name, c.last_name) AS Director, d.project_title
-FROM project_credits d
+FROM credits d
 JOIN people c
 ON d.person_first_name = c.first_name AND d.person_last_name = c.last_name
 WHERE c.Role = 'Director'
